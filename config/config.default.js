@@ -16,6 +16,12 @@ module.exports = appInfo => {
         // proxy: false,
     };
 
+    config.passportWeibo = {
+        key: '2820940946',
+        secret: '894ee6a181424bd76641af9fa7da18d3',
+        callbackURL: '/passport/weibo/callback',
+    };
+
     return config;
 };
 

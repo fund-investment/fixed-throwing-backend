@@ -5,11 +5,11 @@ exports.passport = {
   package: 'egg-passport',
 };
 
-// exports.passportWeibo = {
-//   enable: true,
-//   package: 'egg-passport-weibo',
-// };
-//
+exports.passportWeibo = {
+  enable: true,
+  package: 'egg-passport-weibo',
+};
+
 // exports.passportTwitter = {
 //   enable: true,
 //   package: 'egg-passport-twitter',
