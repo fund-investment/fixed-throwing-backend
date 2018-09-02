@@ -8,7 +8,9 @@
     "egg-passport": "^2.0.1",
     "egg-passport-github": "^1.0.0",
     "egg-passport-weibo": "^1.0.0",
-    "egg-scripts": "^2.5.0"
+    "egg-scripts": "^2.5.0",
+    "egg-sequelize": "^4.1.0",
+    "mysql2": "^1.6.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -18,6 +20,7 @@
     "egg-mock": "^3.14.0",
     "eslint": "^4.11.0",
     "eslint-config-egg": "^6.0.0",
+    "sequelize-cli": "^4.1.1",
     "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
@@ -26,7 +29,7 @@
   "scripts": {
     "start": "egg-scripts start --daemon --title=egg-server-fixed-throwing-backend",
     "stop": "egg-scripts stop --title=egg-server-fixed-throwing-backend",
-    "dev": "egg-bin dev --port 5000",
+    "dev": "egg-bin dev --port 5050",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",

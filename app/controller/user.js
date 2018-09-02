@@ -9,6 +9,13 @@ class UserController extends Controller {
     ctx.logout();
     ctx.redirect(ctx.get('referer') || '/');
   }
+
+    async getAuthorization() {
+        const { ctx, service } = this;
+        const { userId } = ctx.session;
+        const auth = await service.authorization.getAuth(userId);
+        ctx.body = {auth};
+    }
 }
 
 module.exports = UserController;

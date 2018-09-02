@@ -9,6 +9,15 @@ module.exports = appInfo => {
     // add your config here
     config.middleware = [];
 
+    config.sequelize = {
+        dialect: 'mysql',
+        host: '127.0.0.1',
+        port: 3306,
+        database: 'fixed-throwing',
+        username: "throwing",
+        password: "throwing",
+    };
+
     config.passportGithub = {
         key: 'fbf21be0d0560546d940',
         secret: '50e0b4550ee045bf21a38a90d467135ff8908384',

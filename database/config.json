@@ -1,0 +1,24 @@
+{
+  "注意":"该文件可能是无效的",
+  "development": {
+    "username": "throwing",
+    "password": "throwing",
+    "database": "fixed-throwing",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "throwing",
+    "password": "throwing",
+    "database": "fixed-throwing",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "throwing",
+    "password": "throwing",
+    "database": "fixed-throwing",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

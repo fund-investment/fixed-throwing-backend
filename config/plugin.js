@@ -24,3 +24,8 @@ exports.passportGithub = {
 //   enable: true,
 //   package: 'egg-passport-bitbucket',
 // };
+
+exports.sequelize = {
+    enable: true,
+    package: 'egg-sequelize',
+};
