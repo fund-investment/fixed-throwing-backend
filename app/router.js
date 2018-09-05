@@ -6,7 +6,8 @@ module.exports = app => {
     app.router.get('/', 'home.render');
     app.router.get('/user', 'home.render');
 
-    app.router.get('/logout', 'user.logout');
+    app.router.get('/api/user/login', 'user.login');
+    app.router.get('/api/user/logout', 'user.logout');
     app.router.get('/api/user/get_auth', 'user.getAuthorization');
 
     app.passport.mount('weibo');
