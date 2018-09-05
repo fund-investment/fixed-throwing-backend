@@ -6,7 +6,8 @@ module.exports = app => {
   app.router.get('/', 'home.render');
   app.router.get('/user', 'home.render');
 
-  app.router.get('/logout', 'user.logout');
+  app.router.get('/api/user/login', 'user.login');
+    app.router.get('/api/user/logout', 'user.logout');
   app.router.get('/api/user/get_auth', 'user.getAuthorization');
 
   app.passport.mount('weibo');
@@ -28,10 +29,12 @@ module.exports = app => {
     // uid      | provider unique id
     // user_id  | current application user id
     const auth = await ctx.model.Authorization.findOne({
-      user_id: user.id,
-      origin: user.provider,
+      where: {user_id: user.id,
+      }
     });
-    const existsUser = auth ? await ctx.model.User.findOne({ id: auth.user_id }) : false;
+    const existsUser = auth ? await ctx.model.User.findOne({ where: {id: auth.user_id ,
+                origin: user.provider,
+            }}) : false;
     if (existsUser) {
       return existsUser;
     }

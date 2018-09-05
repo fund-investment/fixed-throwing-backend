@@ -31,6 +31,13 @@ module.exports = appInfo => {
     callbackURL: '/passport/weibo/callback',
   };
 
-  return config;
+  config.security = {
+        csrf: {
+            enable: false,
+            // ignore: (ctx) => ['/api/user/login', '/api/user/logout'].includes(ctx.originalUrl),
+        },
+    };
+
+    return config;
 };
 
