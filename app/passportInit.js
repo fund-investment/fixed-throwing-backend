@@ -43,14 +43,14 @@ module.exports = (passport) => {
     passport.serializeUser(async (ctx, user) => {
         // 处理 user
         // ...
-        // return user;
+        return user;
     });
 
     // 反序列化后把用户信息从 session 中取出来，反查数据库拿到完整信息
     passport.deserializeUser(async (ctx, user) => {
         // 处理 user
         // ...
-        // return user;
+        return user;
     });
 };
 

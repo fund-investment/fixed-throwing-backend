@@ -35,18 +35,18 @@ class UserController extends Controller {
 
     async getAuthorization() {
         const {ctx, service} = this;
-        const {userId} = ctx.session;
-        const auth = await service.authorization.getAuth(userId);
+        const {user} = ctx.session.passport;
+        const auth = await service.authorization.getAuth(user.id);
         ctx.body = {auth};
     }
 
     async getCurrentUser() {
         const {ctx, service} = this;
-        const {userId} = ctx.session;
-        const user = await service.user.query(userId);
-        user.dataValues.avatar = user.photo;
-        user.dataValues.userid = user.id;
-        ctx.body = user;
+        const {user} = ctx.session.passport;
+        const currentUser = await service.user.query(user.id);
+        currentUser.dataValues.avatar = user.photo;
+        currentUser.dataValues.userid = user.id;
+        ctx.body = currentUser;
     }
 }
 
