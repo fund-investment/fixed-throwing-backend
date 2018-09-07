@@ -6,7 +6,7 @@ module.exports = app => {
 
     return app.model.define('password', {
         id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-        user_id: INTEGER,
+        user_id: STRING(100),
         password: STRING(100),
         created_at: DATE,
         updated_at: DATE,
