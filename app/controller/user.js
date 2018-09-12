@@ -35,8 +35,8 @@ class UserController extends Controller {
 
     async getAuthorization() {
         const {ctx, service} = this;
-        const {user} = ctx.session.passport;
-        const auth = await service.authorization.getAuth(user.id);
+        const {user} = ctx.session.passport || {};
+        const auth = await service.authorization.getAuth(user ? user.id : 'non-existent-user');
         ctx.body = {auth};
     }
 

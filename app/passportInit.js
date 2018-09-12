@@ -37,7 +37,7 @@ module.exports = (passport) => {
         // 调用 service 注册新用户
         return await ctx.service.user.register(user);
     });
-    // passport.authenticate('',{successRedirect:'/'} );
+    passport.authenticate('',{successRedirect:'/'} );
 
     // 将用户信息序列化后存进 session 里面，一般需要精简，只保存个别字段
     passport.serializeUser(async (ctx, user) => {
